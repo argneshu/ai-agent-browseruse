@@ -1,0 +1,15 @@
+[
+  {
+    "name": "Check that Color of t-shirt should be read",
+    "prompt": "Open https://swaglabs.in/ website, add red t-shirt to cart and check that t-shirt color should be red",
+    "assertion": {
+      "type": "includes",
+      "expected": "red",
+      "source": "result"
+    }
+  },
+  {
+    "name": "Check Cart Empty State",
+    "prompt": "Open https://swaglabs.in/ website and verify cart is empty on load"
+  }
+]
