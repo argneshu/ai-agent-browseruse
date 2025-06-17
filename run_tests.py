@@ -128,7 +128,7 @@ async def run_test_case(name, prompt, assertion=None):
             "name": name,
             "status": "FAILED",
             "error": str(e),
-            "assertion": "❌ Test execution error"
+            "assertion": "❌ Test Execution error"
         }
    
     
