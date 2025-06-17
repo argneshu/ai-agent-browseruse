@@ -15,7 +15,11 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git credentialsId: 'your-github-cred-id', url: 'https://github.com/your-user/your-repo.git'
+                git(
+                branch: 'main',
+                credentialsId: 'f7134d31-5198-4078-bf09-59cb2e695ac1',
+                url: 'https://github.com/argneshu/ai-agent-browseruse'
+            )
             }
         }
 
