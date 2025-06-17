@@ -8,8 +8,8 @@ pipeline {
         SMTP_PORT = "587"
         SMTP_USER = credentials('9e4e053c-b36c-4976-bfbe-805f0c37f5a4')
         SMTP_PASS = credentials('smtp-pass')
-        SENDER_EMAIL = credentials('sender-email')
-        RECEIVER_EMAIL = credentials('receiver-email')
+        SENDER_EMAIL = credentials('47be7468-c6f9-4662-ad64-082e9d0fb004')
+        RECEIVER_EMAIL = credentials('95f8fda8-cdda-4424-83e9-5aaefd2785e9')
     }
 
     stages {
