@@ -43,6 +43,7 @@ pipeline {
                 source ${VENV_DIR}/bin/activate
                 pip install browser-use
                 pip install "browser-use[memory]"
+                pip install pyparsing
                 playwright install chromium --with-deps
                 '''
             }
