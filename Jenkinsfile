@@ -6,7 +6,7 @@ pipeline {
         GOOGLE_API_KEY = credentials('google-api-key')
         SMTP_SERVER = "smtp.gmail.com"
         SMTP_PORT = "587"
-        SMTP_USER = credentials('smtp-user')
+        SMTP_USER = credentials('9e4e053c-b36c-4976-bfbe-805f0c37f5a4')
         SMTP_PASS = credentials('smtp-pass')
         SENDER_EMAIL = credentials('sender-email')
         RECEIVER_EMAIL = credentials('receiver-email')
