@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         VENV_DIR = "venv"
-        GOOGLE_API_KEY = credentials('google-api-key')
+        GOOGLE_API_KEY = credentials('28839b49-6886-4d96-94ac-868b96add3ee	')
         SMTP_SERVER = "smtp.gmail.com"
         SMTP_PORT = "587"
         SMTP_USER = credentials('cb33f88c-77d1-4a00-9093-e50d748bf138')
