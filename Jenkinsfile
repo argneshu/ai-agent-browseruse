@@ -43,7 +43,7 @@ pipeline {
                 source ${VENV_DIR}/bin/activate
                 pip install browser-use
                 pip install "browser-use[memory]"
-                playwright install chromium --with-deps --no-sandbox
+                playwright install chromium --with-deps
                 '''
             }
         }
