@@ -7,7 +7,7 @@ pipeline {
         SMTP_SERVER = "smtp.gmail.com"
         SMTP_PORT = "587"
         SMTP_USER = credentials('cb33f88c-77d1-4a00-9093-e50d748bf138')
-        SMTP_PASS = credentials('9e4e053c-b36c-4976-bfbe-805f0c37f5a4	')
+        SMTP_PASS = credentials('9e4e053c-b36c-4976-bfbe-805f0c37f5a4') // Removed stray tab
         SENDER_EMAIL = credentials('47be7468-c6f9-4662-ad64-082e9d0fb004')
         RECEIVER_EMAIL = credentials('95f8fda8-cdda-4424-83e9-5aaefd2785e9')
     }
@@ -16,17 +16,17 @@ pipeline {
         stage('Checkout') {
             steps {
                 git(
-                branch: 'main',
-                credentialsId: 'f7134d31-5198-4078-bf09-59cb2e695ac1',
-                url: 'https://github.com/argneshu/ai-agent-browseruse'
-            )
+                    branch: 'main',
+                    credentialsId: 'f7134d31-5198-4078-bf09-59cb2e695ac1',
+                    url: 'https://github.com/argneshu/ai-agent-browseruse'
+                )
             }
         }
 
         stage('Setup Python and Virtual Environment') {
             steps {
-                sh '''
-                #!/bin/bash
+                sh '''#!/bin/bash
+                set -e
                 sudo apt update
                 sudo apt install python3 python3-venv python3-pip -y
                 python3 -m venv ${VENV_DIR}
@@ -38,8 +38,8 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                sh '''
-                #!/bin/bash
+                sh '''#!/bin/bash
+                set -e
                 source ${VENV_DIR}/bin/activate
                 pip install browser-use
                 pip install "browser-use[memory]"
@@ -64,8 +64,8 @@ RECEIVER_EMAIL=${RECEIVER_EMAIL}
 
         stage('Run Tests') {
             steps {
-                sh '''
-                #!/bin/bash
+                sh '''#!/bin/bash
+                set -e
                 source ${VENV_DIR}/bin/activate
                 python run_tests.py
                 '''
