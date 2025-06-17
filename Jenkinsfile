@@ -3,6 +3,13 @@ pipeline {
 
     environment {
         VENV_DIR = "venv"
+        GOOGLE_API_KEY = credentials('google-api-key')
+        SMTP_SERVER = "smtp.gmail.com"
+        SMTP_PORT = "587"
+        SMTP_USER = credentials('smtp-user')
+        SMTP_PASS = credentials('smtp-pass')
+        SENDER_EMAIL = credentials('sender-email')
+        RECEIVER_EMAIL = credentials('receiver-email')
     }
 
     stages {
@@ -32,6 +39,20 @@ pipeline {
                 pip install "browser-use[memory]"
                 playwright install chromium --with-deps --no-sandbox
                 '''
+            }
+        }
+
+        stage('Generate .env File') {
+            steps {
+                writeFile file: '.env', text: """
+GOOGLE_API_KEY=${GOOGLE_API_KEY}
+SMTP_SERVER=${SMTP_SERVER}
+SMTP_PORT=${SMTP_PORT}
+SMTP_USER=${SMTP_USER}
+SMTP_PASS=${SMTP_PASS}
+SENDER_EMAIL=${SENDER_EMAIL}
+RECEIVER_EMAIL=${RECEIVER_EMAIL}
+"""
             }
         }
 
