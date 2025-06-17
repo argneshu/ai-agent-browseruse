@@ -39,6 +39,7 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 sh '''
+                #!/bin/bash
                 source ${VENV_DIR}/bin/activate
                 pip install browser-use
                 pip install "browser-use[memory]"
@@ -64,6 +65,7 @@ RECEIVER_EMAIL=${RECEIVER_EMAIL}
         stage('Run Tests') {
             steps {
                 sh '''
+                #!/bin/bash
                 source ${VENV_DIR}/bin/activate
                 python run_tests.py
                 '''
