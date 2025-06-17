@@ -100,7 +100,7 @@ async def run_test_case(name, prompt, assertion=None):
         logging.info(f"Running test: {name}")
         agent = Agent(
             task=prompt,
-            llm=ChatGoogleGenerativeAI(model="gemini-1.5-flash"),
+            llm=ChatGoogleGenerativeAI(model="gemini-2.0-flash"),
         )
         result = await agent.run()
          # Handle assertions
