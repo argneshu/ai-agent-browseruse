@@ -11,8 +11,13 @@ from datetime import datetime
 from jinja2 import Template
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
+import argparse
 
 from pyparsing import html_comment
+parser = argparse.ArgumentParser()
+parser.add_argument('--single-test', help='Run only a single test from file', action='store_true')
+args = parser.parse_args()
+
 load_dotenv()
 
 smtp_server = os.getenv("SMTP_SERVER")
@@ -100,7 +105,7 @@ async def run_test_case(name, prompt, assertion=None):
         logging.info(f"Running test: {name}")
         agent = Agent(
             task=prompt,
-            llm=ChatGoogleGenerativeAI(model="gemini-2.0-flash"),
+            llm=ChatGoogleGenerativeAI(model="gemini-2.0-flash-001"),
         )
         result = await agent.run()
          # Handle assertions
@@ -141,11 +146,26 @@ async def main():
             print(f"Deleted old report: {file}")
         except Exception as e:
             print(f"Could not delete {file}: {e}")
-    with open("test_cases.json") as f:
-        test_cases = json.load(f)
 
+ # Load test cases
+    if args.single_test:
+        test_file = 'dynamic_test_cases.json'
+        if not os.path.exists(test_file):
+            print(f"⚠️ {test_file} not found.")
+            return
+        with open(test_file, 'r') as f:
+            tests = json.load(f)
+    else:
+        test_file = 'test_cases.json'
+        if not os.path.exists(test_file):
+            print(f"⚠️ {test_file} not found.")
+            return
+        with open(test_file, 'r') as f:
+            tests = json.load(f)
+
+# Proceed to run tests in 'tests' list
     results = []
-    for test in test_cases:
+    for test in tests:
         result = await run_test_case(test['name'], test['prompt'], test.get('assertion'))
         results.append(result)
 

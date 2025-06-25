@@ -1,0 +1,119 @@
+[
+  {
+    "name": "Manual UI Test",
+    "prompt": "Test prompt",
+    "assertion": {
+      "type": "includes",
+      "expected": "success",
+      "source": "result"
+    }
+  },
+  {
+    "name": "Manual UI Test",
+    "prompt": "Test prompt",
+    "assertion": {
+      "type": "includes",
+      "expected": "success",
+      "source": "result"
+    }
+  },
+  {
+    "name": "Manual UI Test",
+    "prompt": "ewf",
+    "assertion": {
+      "type": "includes",
+      "expected": "",
+      "source": "result"
+    }
+  },
+  {
+    "name": "Manual UI Test",
+    "prompt": "",
+    "assertion": {
+      "type": "includes",
+      "expected": "",
+      "source": "result"
+    }
+  },
+  {
+    "name": "Manual UI Test",
+    "prompt": "ee",
+    "assertion": {
+      "type": "includes",
+      "expected": "",
+      "source": "result"
+    }
+  },
+  {
+    "name": "Manual UI Test",
+    "prompt": "open chrome",
+    "assertion": {
+      "type": "includes",
+      "expected": "",
+      "source": "result"
+    }
+  },
+  {
+    "name": "Manual UI Test",
+    "prompt": "open facebook on chrome browser",
+    "assertion": {
+      "type": "includes",
+      "expected": "facebook",
+      "source": "result"
+    }
+  },
+  {
+    "name": "Manual UI Test",
+    "prompt": "open facebook on chrome browser",
+    "assertion": {
+      "type": "includes",
+      "expected": "facebook",
+      "source": "result"
+    }
+  },
+  {
+    "name": "Manual UI Test",
+    "prompt": "open chrome browser and navigate to https://www.facebook.com",
+    "assertion": {
+      "type": "includes",
+      "expected": "facebook",
+      "source": "result"
+    }
+  },
+  {
+    "name": "Manual UI Test",
+    "prompt": "open chrome browser and navigate to https://www.facebook.com",
+    "assertion": {
+      "type": "includes",
+      "expected": "",
+      "source": "result"
+    }
+  },
+  {
+    "name": "Manual UI Test",
+    "prompt": "open chrome browser and navigate to https://www.facebook.com",
+    "assertion": {
+      "type": "includes",
+      "expected": "",
+      "source": "result"
+    }
+  },
+  {
+    "name": "Manual UI Test",
+    "prompt": "Open chrome browser and search for automaiton",
+    "assertion": {
+      "type": "includes",
+      "expected": "automation",
+      "source": "result"
+    }
+  },
+  {
+    "name": "Manual UI Test",
+    "prompt": "Open google chrome",
+    "assertion": {
+      "type": "includes",
+      "expected": "chrrome",
+      "source": "result"
+    }
+  }
+]

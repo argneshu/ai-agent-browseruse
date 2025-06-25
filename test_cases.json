@@ -1,15 +1,20 @@
 [
   {
-    "name": "Check that Color of t-shirt should be read",
-    "prompt": "Open https://swaglabs.in/ website, add red t-shirt to cart and check that t-shirt color should be red",
+    "name": "Correct login",
+    "prompt": "Open https://www.saucedemo.com/v1/index.html website, do login and check that 'Products' text should be visible",
     "assertion": {
       "type": "includes",
-      "expected": "red",
+      "expected": "Products",
       "source": "result"
-    }
+    }  
   },
   {
-    "name": "Check Cart Empty State",
-    "prompt": "Open https://swaglabs.in/ website and verify cart is empty on load"
+    "name": "Incorrect login",
+    "prompt": "Open https://www.saucedemo.com/v1/index.html website, do incorrect login and check that 'Products' text should not be visible",
+    "assertion": {
+      "type": "includes",
+      "expected": "Login",
+      "source": "result"
+    }  
   }
 ]

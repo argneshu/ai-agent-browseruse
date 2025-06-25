@@ -1,0 +1,9 @@
+{
+  "name": "Manual UI Test",
+  "prompt": "Open google chrome",
+  "assertion": {
+    "type": "includes",
+    "expected": "chrrome",
+    "source": "result"
+  }
+}
